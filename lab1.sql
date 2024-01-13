@@ -1,9 +1,16 @@
 --Завдання 2
---Показати статистику студентів. Має відображатися
---назва країни та кількість студентів з цієї країни.
-
-SELECT country, COUNT (*) AS student_count
+--Показати кількість студентів з мінімальною середньою
+--оцінкою з математики.
+SELECT COUNT(*) AS count_min_math_avg
 FROM student_grades
-GROUP BY country
+WHERE average_grade_per_year = (
+    SELECT MIN(average_grade_per_year)
+    FROM student_grades
+    WHERE min_subject_name = 'Mathematics'
+);
+
+
+
+
 
 
