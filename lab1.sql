@@ -1,9 +1,7 @@
---Завдання 1
---Показати електронні адреси студентів, 
---що починаються з конкретної літери.
+--Завдання 2
+--Показати мінімальну середню оцінку по всіх студентах.
 
-SELECT email
+SELECT MIN(average_grade_per_year) AS Min_Average_Grade
 FROM student_grades
-WHERE LOWER(SUBSTRING(email, 1, 1)) = 'a';
 
 
