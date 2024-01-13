@@ -1,8 +1,9 @@
 --Завдання 1
---Показати інформацію про студентів, в номері яких
---є три сімки.
+--Показати електронні адреси студентів, 
+--що починаються з конкретної літери.
 
-SELECT * FROM Student_Grades
-WHERE contact_phone LIKE '%777%';
+SELECT email
+FROM student_grades
+WHERE LOWER(SUBSTRING(email, 1, 1)) = 'a';
 
 
