@@ -1,6 +1,14 @@
 --Завдання 1
---Показати ПІБ усіх студентів з мінімальною оцінкою
---у вказаному діапазоні.
+--Показати інформацію про студентів, 
+--яким виповнилося 20 років.
 
-SELECT student_name FROM Student_Grades
-WHERE min_grade BETWEEN 4 AND 8;
+SELECT *
+FROM student_grades
+WHERE date_of_birth <= current_date - interval '25 years';
+--отримати вік студентів
+SELECT
+  student_name,
+  date_of_birth,
+  EXTRACT(YEAR FROM AGE(current_date, date_of_birth)) AS age
+FROM
+  student_grades;
