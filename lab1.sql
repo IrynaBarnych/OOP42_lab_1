@@ -1,7 +1,9 @@
 --Завдання 2
---Показати максимальну середню оцінку по всіх студентах.
+--Показати статистику міст. Має відображатися назва
+--міста та кількість студентів з цього міста..
 
-SELECT MAX(average_grade_per_year) AS Max_Average_Grade
+SELECT city, COUNT (*) AS student_count
 FROM student_grades
+GROUP BY city
 
 
